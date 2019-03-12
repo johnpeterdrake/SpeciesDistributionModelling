@@ -18,7 +18,7 @@ Each of the three tasks above are performed by one file.
 ## Attributions
 The idea for this project was inspired by the discussion of a similar idea with Dr. Kim Cuddington. Dr. Cuddington is not involved with this project in any way.
 
-Some of the code here is modified from other sources. I've provided references in the code where necessary.
+Some of the code in this repo is modified from other sources. I've provided references in the code where necessary.
 
 The decision to use Flickr was based on a paper that uses Flickr to map honeybee and flowering plant distributions [1].
 
