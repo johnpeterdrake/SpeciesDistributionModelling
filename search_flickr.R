@@ -4,6 +4,12 @@
 ### -- Much of this code is modified from her repo
 ### ----------------------------------------------------------------------------------------------
 
+# Clear workspace
+rm(list=ls())
+
+# Set working directory
+setwd("working directory")
+
 ### -----------------------------------------------
 ### -- Connect to Flickr
 
@@ -12,9 +18,13 @@ library(RCurl)
 library(XML)
 library(httr)
 
-# Define keys
-api_key <- "api_key_goes_here"
-secret_key <- "secret_key_goes_here"
+# Library for working with csv files
+library(csv)
+
+# Read in the keys
+keys <- read.table("flickr_keys.txt", header=T, check.names=F) # tab delimited
+api_key <- toString(keys$api_key)
+secret_key <- toString(keys$secret_key)
 
 # Create app to get authorization for
 myapp <- oauth_app("Invasive Species Virtual Distribution Map",
@@ -147,7 +157,16 @@ for (y in year) {
   }
 }
 
+
+### -----------------------------------------------
+### -- Save output
+
 # Remove photos without coordinates and convert coordinates to numeric
 pics_geo <- pics[pics$latitude!=0 & pics$longitude!=0,]
 pics_geo$latitude  <- as.numeric(pics_geo$latitude)
 pics_geo$longitude <- as.numeric(pics_geo$longitude)
+
+# Save as .csv file
+pics_geo_to_write <- pics_geo[c("id","latitude","longitude")]
+pics_geo_to_write["id"] <- as.numeric(unlist(pics_geo_to_write["id"]))
+write.csv(pics_geo_to_write, file="kudzu_occurrence_data.csv")
