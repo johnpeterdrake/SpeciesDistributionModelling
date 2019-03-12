@@ -1,7 +1,7 @@
 # SpeciesDistributionModelling
 
 ## Purpose
-The code here uses R to crawl Flickr for geotagged pictures of kudzu, fit a species distribution model based on these observations, and then present the results.
+The code here uses R to crawl Flickr for geotagged pictures of kudzu, fits a species distribution model based on these observations, and then presents the results.
 
 ## Repo structure
 Each of the three tasks above are performed by one file.
