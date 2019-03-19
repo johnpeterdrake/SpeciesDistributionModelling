@@ -1,13 +1,17 @@
 # SpeciesDistributionModelling
 
 ## Purpose
-The code here uses R to crawl Flickr for geotagged pictures of kudzu, fits a species distribution model based on these observations, and then presents the results.
+The code here uses R to crawl Flickr for geotagged pictures of kudzu, fits a species distribution model based on these observations, and then saves the results. The folder 'SDM_App' contains the code for an R Shiny app that reads in the saved files and plots occurrence data and the results of the species distribution model.
 
 ## Repo structure
-Each of the three tasks above are performed by one file.
-1. 'search_flickr.R' searches Flickr for mentions of kudzu that have location data then saves the data as a csv file
-1. 'fit_sdm.R' reads in the species presence data and bioclim data and uses them to fit a species distribution model
-1. 'map_results.R' reads in the species presence data, bioclim data, and species distribution model and maps the output
+- 'search_flickr.R' searches Flickr for mentions of kudzu that have location data then saves the data as a csv file
+- 'fit_sdm.R' reads in the species presence data and bioclim data and uses them to fit a species distribution model
+- 'map_results.R' reads in the species presence data, bioclim data, and species distribution model and maps the output
+- 'SDM_App' is a folder containing all the code for the app at https://johnpeterdrake.shinyapps.io/sdm_app.
+- - 'app.R' produces the app
+- - 'bioclim' contains data from worldclim at 10 arcminute resolution, limited to part of North America to save space
+- - 'data' contains occurrence data for the species
+- - 'models' contains RDS files containing maxent models fit using the occurrence data
 
 ## Notes
 1. In order to run 'search_flickr.R' you will need an API key and secret key from Flickr.
