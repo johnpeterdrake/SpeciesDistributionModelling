@@ -1,7 +1,7 @@
 # SpeciesDistributionModelling
 
 ## Purpose
-The code here uses R to crawl Flickr for geotagged pictures of kudzu, fits a species distribution model based on these observations, and then saves the results. The folder 'SDM_App' contains the code for an R Shiny app that reads in the saved files and plots occurrence data and the results of the species distribution model.
+The code here uses R to crawl Flickr for geotagged pictures of kudzu, fits a species distribution model based on these observations, and then saves the results. The folder 'sdm_app' contains the code for an R Shiny app that reads in the saved files and plots occurrence data and the results of the species distribution model.
 
 ## Repo structure
 - 'search_flickr.R' searches Flickr for mentions of kudzu that have location data then saves the data as a csv file
